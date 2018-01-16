@@ -84,9 +84,10 @@ class ProductMediumUploadViewTests(AdminAPITestCase):
         mock_get_uploaded_file.return_value = file
 
         response = self.client.post(
-            reverse('api:admin:product-medium', kwargs=dict(pk=self.product.pk))
+            reverse('api:admin:product-medium', kwargs=dict(pk=self.product.pk)),
+            dict(embed='http://some-url-here')
         )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.content)
 
         self.assertNotEqual(self.product.media.count(), 0)
 

@@ -65,7 +65,7 @@ class Auction(models.Model):
     open_until = models.DateTimeField(null=True, blank=True, default=None)
     ended_at = models.DateTimeField(null=True, blank=True, default=None)
 
-    product = models.OneToOneField(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     charity = models.ForeignKey(Charity, null=True, blank=True)
 
     objects = AuctionManager()
@@ -182,6 +182,14 @@ class Auction(models.Model):
             self.status = AUCTION_STATUS_WAITING_FOR_PAYMENT
         self.ended_at = timezone.now()
         self.save()
+
+        # cancel other auctions on the same product
+        auctions = Auction.objects.filter(product=self.product).filter(
+            Q(status=AUCTION_STATUS_PREVIEW) |
+            Q(status=AUCTION_STATUS_OPEN)
+        ).exclude(pk=self.pk)
+        for auction in auctions:
+            auction.cancel()
 
         try:
             HistoryRecord.objects.create_history_record(self, None, HISTORY_RECORD_AUCTION_FINISH)

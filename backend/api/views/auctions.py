@@ -30,7 +30,8 @@ class AuctionFrontListView(generics.ListAPIView):
     queryset = Auction.objects.order_by('-started_at') \
         .select_related('product') \
         .select_related('product__donor') \
-        .prefetch_related('product__media')
+        .prefetch_related('product__media') \
+        .filter(status=AUCTION_STATUS_OPEN)
 
 
 class AuctionListView(generics.ListAPIView):
@@ -46,7 +47,8 @@ class AuctionListView(generics.ListAPIView):
     queryset = Auction.objects.order_by('-started_at') \
         .select_related('product') \
         .select_related('product__donor') \
-        .prefetch_related('product__media')
+        .prefetch_related('product__media') \
+        .filter(status=AUCTION_STATUS_OPEN)
 
 
 class AuctionDetailView(generics.RetrieveAPIView):
@@ -54,7 +56,8 @@ class AuctionDetailView(generics.RetrieveAPIView):
     lookup_url_kwarg = 'pk'
     queryset = Auction.objects.order_by('-started_at') \
         .select_related('product') \
-        .select_related('product__donor')
+        .select_related('product__donor') \
+        .filter(status=AUCTION_STATUS_OPEN)
 
 
 class AuctionPlaceBidView(generics.CreateAPIView):
@@ -62,7 +65,8 @@ class AuctionPlaceBidView(generics.CreateAPIView):
     serializer_class = BidSerializer
     lookup_url_kwarg = 'pk'
     queryset = Auction.objects.select_related('product') \
-        .select_related('product__donor')
+        .select_related('product__donor') \
+        .filter(status=AUCTION_STATUS_OPEN)
 
 
 class AccountBidListView(generics.ListAPIView):

@@ -127,3 +127,23 @@ class FinishAuctionTests(MockChargeMixin, TestCase):
 
         self.assertTrue(mock_refund_create.called)
         self.assertEqual(mock_refund_create.call_args[0][0], mock_charge)
+
+    @patch('pinax.stripe.actions.charges.create')
+    def test_finish_auction_and_others_on_the_same_product_cancelled(self, mock_charge_create):
+        mock_charge_create.return_value = self.create_mock_charge()
+        other_auction1 = AuctionFactory.create(
+            status=AUCTION_STATUS_OPEN,
+            product=self.auction.product
+        )
+        other_auction2 = AuctionFactory.create(
+            status=AUCTION_STATUS_OPEN,
+            product=self.auction.product
+        )
+
+        self.auction.finish()
+
+        self.assertEqual(self.auction.status, AUCTION_STATUS_WAITING_TO_SHIP)
+        other_auction1.refresh_from_db()
+        self.assertEqual(other_auction1.status, AUCTION_STATUS_CANCELLED)
+        other_auction2.refresh_from_db()
+        self.assertEqual(other_auction2.status, AUCTION_STATUS_CANCELLED)

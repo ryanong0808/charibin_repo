@@ -86,9 +86,10 @@ class DonorMediumUploadViewTests(AdminAPITestCase):
         mock_get_uploaded_file.return_value = file
 
         response = self.client.post(
-            reverse('api:admin:donor-medium', kwargs=dict(pk=self.donor.pk))
+            reverse('api:admin:donor-medium', kwargs=dict(pk=self.donor.pk)),
+            dict(embed='http://some-url-here')
         )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.content)
 
         self.assertNotEqual(self.donor.media.count(), 0)
 
