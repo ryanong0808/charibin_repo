@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 import { createAction, handleActions } from 'redux-actions'
 
-import { requestPending, requestSuccess, requestFail } from 'store/api/request'
+import { requestSuccess, requestFail } from 'store/api/request'
 import {
   ADMIN_GET_AUCTION_LIST,
   ADMIN_CREATE_AUCTION,
