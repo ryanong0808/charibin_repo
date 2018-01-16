@@ -7,6 +7,7 @@ from django.utils import timezone
 
 from rest_framework import generics
 from rest_framework import views
+from rest_framework.exceptions import ParseError
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -22,6 +23,8 @@ from api.serializers.auctions import AuctionBacklogSerializer
 from api.paginations import TenPerPagePagination
 from api.permissions import IsAdmin
 from auction.constants import AUCTION_STATUS_PREVIEW
+from auction.constants import AUCTION_STATUS_CANCELLED
+from auction.constants import AUCTION_STATUS_CANCELLED_DUE_TO_NO_BIDS
 from auction.constants import AUCTION_STATUS_WAITING_TO_SHIP
 from auction.models import Auction
 from auction.models import Bid
@@ -49,8 +52,12 @@ class AuctionDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def destroy(self, *args, **kwargs):
         auction = self.get_object()
-        if auction.status != AUCTION_STATUS_PREVIEW:
-            raise ParseError('Only auctions in preview status can be deleted')
+        if auction.status not in [
+            AUCTION_STATUS_PREVIEW,
+            AUCTION_STATUS_CANCELLED,
+            AUCTION_STATUS_CANCELLED_DUE_TO_NO_BIDS
+        ]:
+            raise ParseError('Only auctions in preview or cancelled status can be deleted')
         return super(AuctionDetailView, self).destroy(*args, **kwargs)
 
 

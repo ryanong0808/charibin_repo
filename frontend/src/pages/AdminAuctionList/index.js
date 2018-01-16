@@ -19,6 +19,7 @@ import {
   getAuctionList,
   finishAuction,
   cancelAuction,
+  deleteAuction,
 } from 'store/modules/admin/auctions'
 import { adminAuctionsSelector } from 'store/selectors'
 import {
@@ -46,6 +47,7 @@ class AdminAuctionList extends PureComponent {
     getAuctionList: PropTypes.func.isRequired,
     finishAuction: PropTypes.func.isRequired,
     cancelAuction: PropTypes.func.isRequired,
+    deleteAuction: PropTypes.func.isRequired,
   }
 
   state = {
@@ -164,6 +166,9 @@ class AdminAuctionList extends PureComponent {
 
     this.props.finishAuction({
       id,
+      success: () => {
+        this.loadData()
+      },
       fail: () => {
         alert('Failed to finish auction')
       },
@@ -177,8 +182,28 @@ class AdminAuctionList extends PureComponent {
 
     this.props.cancelAuction({
       id,
+      success: () => {
+        this.loadData()
+      },
       fail: () => {
         alert('Failed to cancel auction')
+      },
+    })
+  }
+
+  handleDelete = (id) => {
+    if (!window.confirm('Are you sure to delete this auction?')) {
+      return
+    }
+
+    this.props.deleteAuction({
+      id,
+      success: () => {
+        this.loadData()
+      },
+      fail: () => {
+        this.loadData()
+        alert('Failed to delete auction')
       },
     })
   }
@@ -300,7 +325,7 @@ class AdminAuctionList extends PureComponent {
                 columnList={columnList}
                 auctionList={auctionListPage}
                 onFinish={this.handleFinish}
-                onCancel={this.handleCancel}
+                onDelete={this.handleDelete}
               />
               {pagination}
             </TabPane>
@@ -320,7 +345,7 @@ class AdminAuctionList extends PureComponent {
                 columnList={columnList}
                 auctionList={auctionListPage}
                 onFinish={this.handleFinish}
-                onCancel={this.handleCancel}
+                onDelete={this.handleDelete}
               />
               {pagination}
             </TabPane>
@@ -339,6 +364,7 @@ const actions = {
   getAuctionList,
   finishAuction,
   cancelAuction,
+  deleteAuction,
 }
 
 export default compose(

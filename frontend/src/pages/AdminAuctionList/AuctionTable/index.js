@@ -14,6 +14,8 @@ import {
   AUCTION_STATUS_OPEN,
   AUCTION_STATUS_WAITING_FOR_PAYMENT,
   AUCTION_STATUS_WAITING_TO_SHIP,
+  AUCTION_STATUS_CANCELLED,
+  AUCTION_STATUS_CANCELLED_DUE_TO_NO_BIDS,
 } from 'config'
 import { formatDateTime } from 'utils/formatter'
 
@@ -26,6 +28,7 @@ class AuctionTable extends PureComponent {
     loadingStatus: PropTypes.number.isRequired,
     onFinish: PropTypes.func,
     onCancel: PropTypes.func,
+    onDelete: PropTypes.func,
   }
 
   getCellValue = (auction, field) => {
@@ -62,6 +65,15 @@ class AuctionTable extends PureComponent {
     const { onCancel } = this.props
     if (onCancel) {
       onCancel(id)
+    }
+  }
+
+  handleDelete = (id, event) => {
+    event.preventDefault()
+
+    const { onDelete } = this.props
+    if (onDelete) {
+      onDelete(id)
     }
   }
 
@@ -138,6 +150,17 @@ class AuctionTable extends PureComponent {
                           onClick={this.handleCancel.bind(this, auction.get('pk'))}
                         >
                           Cancel
+                        </DropdownItem>}
+                        {(
+                          auctionStatus === AUCTION_STATUS_PREVIEW ||
+                          auctionStatus === AUCTION_STATUS_CANCELLED ||
+                          auctionStatus === AUCTION_STATUS_CANCELLED_DUE_TO_NO_BIDS
+                        ) && <DropdownItem
+                          className="text-danger pr-3"
+                          to="/"
+                          onClick={this.handleDelete.bind(this, auction.get('pk'))}
+                        >
+                          Delete
                         </DropdownItem>}
                       </DropdownMenu>
                     </UncontrolledDropdown>

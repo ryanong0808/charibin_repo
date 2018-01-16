@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 import { createAction, handleActions } from 'redux-actions'
 
-import { requestSuccess, requestFail } from 'store/api/request'
+import { requestPending, requestSuccess, requestFail } from 'store/api/request'
 import {
   ADMIN_GET_AUCTION_LIST,
   ADMIN_CREATE_AUCTION,
@@ -10,6 +10,7 @@ import {
   ADMIN_START_AUCTION,
   ADMIN_FINISH_AUCTION,
   ADMIN_CANCEL_AUCTION,
+  ADMIN_DELETE_AUCTION,
   ADMIN_GET_AUCTION_BID_LIST_PAGE,
   ADMIN_AUCTION_CHANGE_BID_STATUS,
   ADMIN_GET_AUCTION_BACKLOG,
@@ -49,6 +50,7 @@ export const updateAuctionDetail = createAction(ADMIN_UPDATE_AUCTION_DETAIL)
 export const startAuction = createAction(ADMIN_START_AUCTION)
 export const finishAuction = createAction(ADMIN_FINISH_AUCTION)
 export const cancelAuction = createAction(ADMIN_CANCEL_AUCTION)
+export const deleteAuction = createAction(ADMIN_DELETE_AUCTION)
 export const getAuctionBidListPage = createAction(ADMIN_GET_AUCTION_BID_LIST_PAGE)
 export const changeBidStatus = createAction(ADMIN_AUCTION_CHANGE_BID_STATUS)
 export const getAuctionBacklog = createAction(ADMIN_GET_AUCTION_BACKLOG)
@@ -107,6 +109,12 @@ export default handleActions({
 
   [requestSuccess(ADMIN_CANCEL_AUCTION)]: (state, { payload }) => state.withMutations(map => {
     replaceListItem(payload, map, 'auctionListPage')
+  }),
+
+  /* Delete auction actions */
+
+  [ADMIN_DELETE_AUCTION]: (state, { payload }) => state.withMutations(map => {
+    map.set('auctionListPage', state.get('auctionListPage').filter(auction => auction.pk !== payload.id))
   }),
 
   /* Get auction bid list page actions */

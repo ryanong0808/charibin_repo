@@ -43,6 +43,7 @@ export const ADMIN_UPDATE_AUCTION_DETAIL = 'charibin/admin/update-auction-detail
 export const ADMIN_START_AUCTION = 'charibin/admin/start-auction'
 export const ADMIN_FINISH_AUCTION = 'charibin/admin/finish-auction'
 export const ADMIN_CANCEL_AUCTION = 'charibin/admin/cancel-auction'
+export const ADMIN_DELETE_AUCTION = 'charibin/admin/delete-auction'
 export const ADMIN_GET_AUCTION_BID_LIST_PAGE = 'charibin/admin/get-auction-bid-list-page'
 export const ADMIN_AUCTION_CHANGE_BID_STATUS = 'charibin/admin/auction-change-bid-status'
 export const ADMIN_GET_AUCTION_BACKLOG = 'charibin/admin/get-auction-backlog'
