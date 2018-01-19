@@ -52,7 +52,7 @@ class SubscribeForm extends PureComponent {
           </Col>
           <Col xs={12} md={forModal ? undefined : 4}>
             <Button type="submit" block size="lg" color="primary" disabled={submitting}>
-              Subscribe
+              {forModal ? 'Send' : 'Subscribe'}
             </Button>
           </Col>
         </Row>

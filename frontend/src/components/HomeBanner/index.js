@@ -36,12 +36,12 @@ class HomeBanner extends PureComponent {
         <Container className={bem('content')}>
           <Row>
             <Col xs={12} lg={8} xl={6}>
-              <h2 className={bem('title')}>Welcome to Yuma!</h2>
+              <h2 className={bem('title')}>Welcome to CHARIBIN!</h2>
               <p className={bem('description')}>
-                A do-gooder is what you can be with Yuma. We turn your things into lifesaving medicine,
-                emergency services, and support for any charitable organization you choose.
+                A do-gooder is what you can be with Charibin. We help you turn your things into lifesaving
+                medicine, emergency services, and support for any charitable organization you choose.
               </p>
-              <Link to="/" className={bem('link')}>Learn more <IconArrowRight /></Link>
+              <Link to="/mission" className={bem('link')}>Learn more <IconArrowRight /></Link>
             </Col>
           </Row>
         </Container>

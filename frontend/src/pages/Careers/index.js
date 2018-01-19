@@ -55,10 +55,10 @@ class Careers extends PureComponent {
       >
         <Section>
           <p>
-            Yuma harnesses the power of celebrity, technology, and media to raise awareness and
+            Charibin harnesses the power of influencers, technology, and media to raise awareness and
             funds for some of the world's toughest challenges. With a mission to complement traditional
-            fundraising models and help charities transition from analog to digital, Yuma has raised
-            well over $200M for charity since inception...and we’re just getting started.
+            fundraising models and help organizations to transition from analog to digital, Charibin is
+            the ideal place to grow a career and help make an impact to causes worldwide.
           </p>
           <ImageGrid image1={careersImg1} image2={careersImg2} image3={careersImg3} />
         </Section>

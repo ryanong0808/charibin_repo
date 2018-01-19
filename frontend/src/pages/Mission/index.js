@@ -13,20 +13,20 @@ import iconMisson1 from 'images/icon-mission1.svg'
 import iconMisson2 from 'images/icon-mission2.svg'
 import iconMisson3 from 'images/icon-mission3.svg'
 
-import logoBusiness from 'images/logos/logo-business.png'
-import logoCnn from 'images/logos/logo-cnn.png'
-import logoForbes from 'images/logos/logo-forbes.png'
-import logoMashable from 'images/logos/logo-mashable.png'
-import logoProducthunt from 'images/logos/logo-producthunt.png'
-import logoTechcrunch from 'images/logos/logo-techcrunch.png'
-import logoTnw from 'images/logos/logo-tnw.png'
-import logoYahoo from 'images/logos/logo-yahoo.png'
+// import logoBusiness from 'images/logos/logo-business.png'
+// import logoCnn from 'images/logos/logo-cnn.png'
+// import logoForbes from 'images/logos/logo-forbes.png'
+// import logoMashable from 'images/logos/logo-mashable.png'
+// import logoProducthunt from 'images/logos/logo-producthunt.png'
+// import logoTechcrunch from 'images/logos/logo-techcrunch.png'
+// import logoTnw from 'images/logos/logo-tnw.png'
+// import logoYahoo from 'images/logos/logo-yahoo.png'
 
-const ImageItem = ({ image }) => (
-  <Col xs={12} sm={6} md={3} className="pt-40 pt-md-60 text-center">
-    <img src={image} alt="" />
-  </Col>
-)
+// const ImageItem = ({ image }) => (
+//   <Col xs={12} sm={6} md={3} className="pt-40 pt-md-60 text-center">
+//     <img src={image} alt="" />
+//   </Col>
+// )
 
 class Mission extends PureComponent {
   render() {
@@ -37,19 +37,19 @@ class Mission extends PureComponent {
             <Col xs={12} md={7}>
               <Section title="Mission" mbResponsive>
                 <p>
-                  We believe we all want to do good, but sometimes it’s hard to figure out how.
-                  That’s why we’ve made it our mission to do more good in the world with easy,
-                  meaningful giving. We’ve created a unique auction space full of collectibles,
-                  celebrity luxury items, and other valuable goods. Each day, we place them on
-                  auction for buyers around the world, with proceeds going to the giver’s
-                  organization of choice.
+                  We believe everyone has it in them to want to do good, but sometimes it’s hard
+                  to figure out how. That’s why we’ve made it our mission to do more good in the
+                  world by helping others with easy, meaningful giving. We’ve created a unique
+                  auction space full of interesting and valuable goods. Each day, we help people
+                  place them on auction for buyers around the world, with some of the proceeds
+                  going to various causes.
                 </p>
                 <p>
                   <img src={missionImg} alt="Mission" className="w-100" />
                 </p>
                 <p>
-                  We’re turning your things into the support organizations around the world need
-                  to improve lives and do good.
+                  We’re here to help you turn your things into support for the causes you believe
+                  in. Being a do-gooder has never been easier.
                 </p>
               </Section>
             </Col>
@@ -69,7 +69,7 @@ class Mission extends PureComponent {
           </Row>
         </AppContainerLayout>
         <SubscribeBar />
-        <AppContainerLayout>
+        {/* <AppContainerLayout>
           <Section>
             <SectionTitle className="text-center">Mentioned In</SectionTitle>
             <Row className="align-items-center">
@@ -83,7 +83,7 @@ class Mission extends PureComponent {
               <ImageItem image={logoCnn} />
             </Row>
           </Section>
-        </AppContainerLayout>
+        </AppContainerLayout> */}
       </AppLayout1>
     )
   }
