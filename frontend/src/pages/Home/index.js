@@ -145,7 +145,7 @@ class Home extends PureComponent {
 
     return (
       <Section
-        title="Our Blog"
+        title="THE GOOD"
         link="/blog"
         linkText="All Articles"
       >

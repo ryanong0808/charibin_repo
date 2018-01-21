@@ -86,7 +86,7 @@ class AuctionSideFilter extends PureComponent {
             multi
             component={SelectField}
             loadOptions={this.queryDonors}
-            placeholder="Donors..."
+            placeholder="Do-Gooders..."
           />
           <Field
             name="order_by"

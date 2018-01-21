@@ -39,9 +39,9 @@ class DonateModal extends PureComponent {
 
     return (
       <Modal isOpen={show} toggle={handleHide} size="sm">
-        <ModalHeader toggle={handleHide}>Donate</ModalHeader>
+        <ModalHeader toggle={handleHide}>SELL YOUR ITEMS</ModalHeader>
         <ModalBody>
-          <h4 className="mb-30">Want to donate your stuff?</h4>
+          <h4 className="mb-30">Need help selling your items for a cause?</h4>
           <p className="mb-30">
             Please leave your email below and we will contact you shortly.
           </p>
