@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import IconUser from 'icons/IconUser'
 
