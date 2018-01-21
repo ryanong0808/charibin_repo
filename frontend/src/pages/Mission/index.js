@@ -5,7 +5,7 @@ import AppContainerLayout from 'layouts/AppContainerLayout'
 import AppLayout1 from 'layouts/AppLayout1'
 import IconListItem from 'components/IconListItem'
 import Section from 'components/Section'
-import SectionTitle from 'components/SectionTitle'
+// import SectionTitle from 'components/SectionTitle'
 import SubscribeBar from 'components/SubscribeBar'
 
 import missionImg from 'images/mission.jpg'
