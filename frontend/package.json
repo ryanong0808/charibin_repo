@@ -36,7 +36,7 @@
     "react-stripe-elements": "^1.2.0",
     "react-tagsinput": "^3.19.0",
     "react-transition-group": "^2.2.1",
-    "reactstrap": "^5.0.0-alpha.3",
+    "reactstrap": "5.0.0-alpha.3",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-auth-wrapper": "^2.0.2",
