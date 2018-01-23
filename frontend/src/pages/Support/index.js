@@ -42,7 +42,7 @@ class Support extends PureComponent {
                   (212) 243-3900 (9am-6pm EST)
                 </IconListItem>
                 <IconListItem icon={IconMail}>
-                  <a href="mailto:info@yuma.com">info@yuma.com</a>
+                  <a href="mailto:info@charibin.com">info@charibin.com</a>
                 </IconListItem>
                 <IconListItem icon={IconBuilding}>
                   437 Fifth Avenue<br />
