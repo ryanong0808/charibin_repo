@@ -27,9 +27,9 @@ class HomeBanner extends PureComponent {
 
     return (
       <div className={COMPONENT_CLASS} style={{ height }}>
-        <video className={bem('video')} loop autoPlay poster="/videos/yuma-video-bg-poster.jpg">
-          <source src="/videos/yuma-video-bg.mp4" type="video/mp4" />
-          <source src="/videos/yuma-video-bg.webm" type="video/webm" />
+        <video className={bem('video')} loop autoPlay poster="/videos/hero-video-bg-poster.jpg">
+          <source src="/videos/hero-video-bg.mp4" type="video/mp4" />
+          <source src="/videos/hero-video-bg.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
         <div className={bem('overlay')} />

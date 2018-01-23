@@ -15,7 +15,7 @@ class AppLogo extends PureComponent {
 
     return (
       <NavbarBrand tag={Link} to="/" {...props}>
-        <img src={`/${logo}.svg`} height="48" className="align-top" alt="yuma" />
+        <img src={`/${logo}.svg`} height="48" className="align-top" alt="Charibin" />
       </NavbarBrand>
     )
   }
