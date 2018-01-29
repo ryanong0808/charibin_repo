@@ -6,11 +6,8 @@ import { compose } from 'redux'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import careersImg1 from 'images/careers-img1.jpg'
-import careersImg2 from 'images/careers-img2.jpg'
-import careersImg3 from 'images/careers-img3.jpg'
+import careersImg from 'images/careers-img.jpg'
 import FrontContainerLayout from 'layouts/FrontContainerLayout'
-import ImageGrid from 'components/ImageGrid'
 import JobItem from './JobItem'
 import Section from 'components/Section'
 import Spinner from 'components/Spinner'
@@ -60,7 +57,7 @@ class Careers extends PureComponent {
             fundraising models and help organizations to transition from analog to digital, Charibin is
             the ideal place to grow a career and help make an impact to causes worldwide.
           </p>
-          <ImageGrid image1={careersImg1} image2={careersImg2} image3={careersImg3} />
+          <img src={careersImg} className="w-100" alt="Careers" />
         </Section>
 
         <Section title="Current Openings">
