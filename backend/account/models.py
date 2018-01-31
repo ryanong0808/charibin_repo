@@ -6,7 +6,7 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
-from phonenumber_field.modelfields import PhoneNumberField
+from django.core.validators import MaxLengthValidator, MinLengthValidator
 
 from auction.models import Bid
 from common.constants import COUNTRY_CHOICES
@@ -66,7 +66,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     date_joined = models.DateTimeField(_('Date Joined'), auto_now_add=True)
 
-    phone_number = PhoneNumberField(max_length=20, blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True, validators=[MinLengthValidator(7), MaxLengthValidator(20)])
 
     # Address fields
     address_line = models.CharField(_('Address Line'), max_length=255, blank=True, null=True)
