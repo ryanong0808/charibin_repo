@@ -144,7 +144,7 @@ AUTH_USER_MODEL = 'account.User'
 
 # Email
 
-NO_REPLY_EMAIL_ADDRESS = 'no-reply@yuma.com'
+NO_REPLY_EMAIL_ADDRESS = 'welcome@charibin.com'
 
 
 # Django REST Framework

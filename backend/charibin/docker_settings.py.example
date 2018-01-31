@@ -27,7 +27,7 @@ CHANNEL_LAYERS = {
 
 # Site URL
 
-SITE_URL = 'https://www.yuma.org'
+SITE_URL = 'https://www.charibin.com'
 
 
 # Django CORS Headers

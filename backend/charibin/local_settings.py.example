@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['']
 
 # Site URL
 
-SITE_URL = 'https://www.yuma.org'
+SITE_URL = 'https://www.charibin.com'
 
 
 # Database

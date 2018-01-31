@@ -61,28 +61,15 @@ class AccountForm extends PureComponent {
           size="lg"
           component={InputField}
         />
+        <h4 className="mt-5 mb-4">Address</h4>
         <Field
-          name="phone_number"
+          name="address_line"
           type="text"
-          label="Phone Number:"
+          label="Street Address"
           size="lg"
           component={InputField}
         />
-        <h4 className="mt-5 mb-4">Address</h4>
         <Row>
-          <Col xs={12} sm={6}>
-            <Field
-              name="country"
-              type="select"
-              label="Country"
-              size="lg"
-              options={countries.map((item, index) => ({
-                value: item.code,
-                label: item.name
-              }))}
-              component={SelectField}
-            />
-          </Col>
           <Col xs={12} sm={6}>
             <Field
               name="city"
@@ -92,18 +79,31 @@ class AccountForm extends PureComponent {
               component={InputField}
             />
           </Col>
+          <Col xs={12} sm={6}>
+            <Field
+              name="zipcode"
+              type="text"
+              label="Zip / Postal Code"
+              size="lg"
+              component={InputField}
+            />
+          </Col>
         </Row>
         <Field
-          name="zipcode"
-          type="text"
-          label="Zip / Postal Code"
+          name="country"
+          type="select"
+          label="Country"
           size="lg"
-          component={InputField}
+          options={countries.map((item, index) => ({
+            value: item.code,
+            label: item.name
+          }))}
+          component={SelectField}
         />
         <Field
-          name="address_line"
+          name="phone_number"
           type="text"
-          label="Address Line"
+          label="Phone Number:"
           size="lg"
           component={InputField}
         />
