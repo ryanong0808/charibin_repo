@@ -1,0 +1,40 @@
+.how-it-works-banner {
+  position: relative;
+  margin-bottom: $section-spacing / 2;
+  border: 10px solid $border-color;
+
+  &__bg {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: $grid-gutter-width;
+
+    @include media-breakpoint-down($gutter-breakpoint) {
+      padding: $grid-gutter-width-responsive;
+    }
+  }
+
+  &__link {
+    color: $primary;
+  }
+
+  &__title {
+    color: white;
+    font-size: 1.75rem;
+    @include media-breakpoint-up('sm') {
+      font-size: 6vw;
+    }
+    text-transform: uppercase;
+    margin-bottom: 0.5vw;
+  }
+}
