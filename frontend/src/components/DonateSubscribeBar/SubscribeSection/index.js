@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import { Col, Container, Row } from 'reactstrap'
 import { reduxForm } from 'redux-form/immutable'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
@@ -10,10 +9,10 @@ import { MAILCHIMP_TYPE_NEWSLETTER } from 'config'
 import { mailchimpSubscribe } from 'utils/form'
 
 
-const COMPONENT_CLASS = 'subscribe-bar'
+const COMPONENT_CLASS = 'donate-subscribe-bar'
 const bem = (suffix) => `${COMPONENT_CLASS}__${suffix}`
 
-class SubscribeBar extends PureComponent {
+class SubscribeSection extends PureComponent {
 
   doSubmit = (data) => {
     const { showModal } = this.props
@@ -35,24 +34,16 @@ class SubscribeBar extends PureComponent {
   render() {
     const { subscribeForm, subscribeForm: { handleSubmit } } = this.props
     return (
-      <div className={COMPONENT_CLASS}>
-        <Container className="text-center">
-          <Row className="align-items-center">
-            <Col xl={5} lg={6} xs={12} className="mb-3 mb-lg-0">
-              <h4 className={bem('text')}>
-                Subscribe to our newsletter
-              </h4>
-            </Col>
-            <Col xl={7} lg={6} xs={12}>
-              <div className="ml-auto">
-                <SubscribeForm
-                  {...subscribeForm}
-                  handleSubmit={handleSubmit(this.doSubmit)}
-                />
-              </div>
-            </Col>
-          </Row>
-        </Container>
+      <div className="pr-0 pr-lg-3">
+        <h4 className={bem('text')}>
+          Subscribe to our newsletter
+        </h4>
+        <div className="ml-auto">
+          <SubscribeForm
+            {...subscribeForm}
+            handleSubmit={handleSubmit(this.doSubmit)}
+          />
+        </div>
       </div>
     )
   }
@@ -68,4 +59,4 @@ export default compose(
     form: 'subscribeBarForm',
     propNamespace: 'subscribeForm'
   })
-)(SubscribeBar)
+)(SubscribeSection)
