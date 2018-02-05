@@ -130,7 +130,7 @@ const AccountRoutes = props => (
 )
 
 const FrontendRoutes = props => (
-  <div>
+  <Switch>
     <Route exact path="/" component={Home} />
 
     <Route exact path="/signin" component={userIsNotAuthenticated(SignIn)} />
@@ -138,6 +138,7 @@ const FrontendRoutes = props => (
     <Route exact path="/verify-account/:token" component={SignUpVerification} />
 
     <Route exact path="/auctions" component={Auctions} />
+    <Route exact path="/auctions/new-arrivals" component={Auctions} />
     <Route exact path="/auctions/:id" component={AuctionDetail} />
 
     <Route exact path="/donors" component={Donors} />
@@ -157,7 +158,7 @@ const FrontendRoutes = props => (
     <Route exact path="/shipping" component={Shipping} />
     <Route exact path="/support" component={Support} />
     <Route exact path="/terms-conditions" component={TermsConditions} />
-  </div>
+  </Switch>
 )
 
 const modals = (
