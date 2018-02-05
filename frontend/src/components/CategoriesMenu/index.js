@@ -12,7 +12,7 @@ const bem = (suffix) => `${COMPONENT_CLASS}__${suffix}`
 
 
 const CategoriesMenu = ({ className, categories }) =>
-  categories && categories.length > 0 && (
+  categories && categories.length > 0 ? (
     <Nav className={cx(COMPONENT_CLASS, className)}>
       <NavItem className={bem('item')}>
         <NavLink
@@ -35,6 +35,8 @@ const CategoriesMenu = ({ className, categories }) =>
         </NavItem>
       ))}
     </Nav>
+  ) : (
+    <div />
   )
 
 export default CategoriesMenu
