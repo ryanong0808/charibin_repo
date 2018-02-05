@@ -38,6 +38,6 @@ class AuctionCategoryFilterBackend(filters.BaseFilterBackend):
             product_queryset = Product.objects.filter(auction__in=queryset)
             product_queryset = TaggedItem.objects.get_by_model(product_queryset, tag)
             product_ids = list(product_queryset.values_list('pk', flat=True))
-            return Auction.objects.filter(product__in=product_ids)
+            return queryset.filter(product__in=product_ids)
 
         return queryset
