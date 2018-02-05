@@ -9,7 +9,6 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 import AppHeader from 'components/AppHeader'
 import AppHeaderGuest from 'components/AppHeaderGuest'
 import AppFooter from 'components/AppFooter'
-import CategoriesBar from 'components/CategoriesBar'
 import DonateSubscribeBar from 'components/DonateSubscribeBar'
 import { getCurrentUser } from 'store/modules/auth'
 import { signOut } from 'store/modules/auth'
@@ -73,7 +72,6 @@ class AppLayout1 extends PureComponent {
     return (
       <div className={cx(COMPONENT_CLASSNAME, className)} ref={element => this.layoutElement = element}>
         {header}
-        <CategoriesBar />
 
         <div
           className={cx('content', bem('content'))}
