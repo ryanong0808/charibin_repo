@@ -40,4 +40,11 @@ $auction-side-filter-handle-size: 36px;
       right: -$modal-content-border-width;
     }
   }
+
+  .select-wrapper .Select--multi .Select-value {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 110px; // hard-coded for hotfix
+  }
 }
