@@ -73,7 +73,7 @@ class Home extends PureComponent {
     const { auctions } = this.props
     const trendingAuctionsList = auctions.get('auctionTrendingList')
     const auctionTrendingListStatus = auctions.get('auctionTrendingListStatus')
-    const hasItems = !!trendingAuctionsList.size
+    const hasItems = trendingAuctionsList && Boolean(trendingAuctionsList.size)
     const noItems = auctionTrendingListStatus === API_SUCCESS && !hasItems
 
     return (
