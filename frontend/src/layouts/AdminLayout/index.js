@@ -141,6 +141,9 @@ class AdminLayout extends PureComponent {
               <li className="nav-item">
                 <Link className="nav-link text-dark" to="/admin/backlog">Backlog</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link text-dark" to="/admin/settings">Site Settings</Link>
+              </li>
             </ul>
           </div>
 
