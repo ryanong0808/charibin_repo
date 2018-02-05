@@ -106,7 +106,7 @@ class AppFooter extends PureComponent {
                     <NavText>MON - FRI 9am - 6pm EST</NavText>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag="a" href="mailto:support@charibin.com">support@charibin.com</NavLink>
+                    <NavLink className={bem('email')} href="mailto:support@charibin.com">support@charibin.com</NavLink>
                   </NavItem>
                 </Nav>
               </Col>

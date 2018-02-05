@@ -48,6 +48,10 @@ $app-footer-color: rgba(255, 255, 255, 0.3);
     display: inline-block;
   }
 
+  .app-footer__email {
+    color: $primary;
+  }
+
   &__social {
     padding: $app-footer-padding-y 0;
     @extend .justify-content-center;
