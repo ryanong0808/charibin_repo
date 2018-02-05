@@ -15,15 +15,18 @@ import AccountPaymentInfo from 'pages/AccountPaymentInfo'
 import AccountWins from 'pages/AccountWins'
 import AuctionDetail from 'pages/AuctionDetail'
 import Auctions from 'pages/Auctions'
+import Authenticity from 'pages/Authenticity'
 import Careers from 'pages/Careers'
 import Donors from 'pages/Donors'
 import DonorDetail from 'pages/DonorDetail'
 import Faqs from 'pages/Faqs'
+import InfluencerProgram from 'pages/InfluencerProgram'
 import JobDetail from 'pages/JobDetail'
 import Mission from 'pages/Mission'
 import PostDetail from 'pages/PostDetail'
 import Posts from 'pages/Posts'
 import PrivacyPolicy from 'pages/PrivacyPolicy'
+import ReturnsPolicy from 'pages/ReturnsPolicy'
 import Shipping from 'pages/Shipping'
 import Support from 'pages/Support'
 import TermsConditions from 'pages/TermsConditions'
@@ -143,11 +146,14 @@ const FrontendRoutes = props => (
     <Route exact path="/blog" component={Posts} />
     <Route exact path="/blog/posts/:id" component={PostDetail} />
 
+    <Route exact path="/authenticity" component={Authenticity} />
     <Route exact path="/careers" component={Careers} />
     <Route exact path="/faqs" component={Faqs} />
+    <Route exact path="/influencer-program" component={InfluencerProgram} />
     <Route exact path="/jobs/:id" component={JobDetail} />
     <Route exact path="/mission" component={Mission} />
     <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+    <Route exact path="/returns" component={ReturnsPolicy} />
     <Route exact path="/shipping" component={Shipping} />
     <Route exact path="/support" component={Support} />
     <Route exact path="/terms-conditions" component={TermsConditions} />
