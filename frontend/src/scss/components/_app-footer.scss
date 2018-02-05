@@ -1,43 +1,99 @@
+$app-footer-padding-y: 3rem;
+$app-footer-social-font-size: 3rem;
+$app-footer-color: rgba(255, 255, 255, 0.3);
+
 .app-footer {
+  background-color: $dark;
+  padding: $app-footer-padding-y 0;
   @include media-breakpoint-down('sm') {
     display: block;
   }
 
-  &__logo {
-    @extend .text-center;
-    @include media-breakpoint-down('sm') {
-      display: block;
-      margin-bottom: 1.25rem;
-    }
+  &__heading {
+    text-transform: uppercase;
+    color: $navbar-dark-color;
+    margin-bottom: map-get($spacers, 3);
   }
 
   &__navs {
-    flex: 1;
-    @include media-breakpoint-up('md') {
-      display: flex;
+    border-bottom: 1px solid $app-footer-color;
+    padding-bottom: $app-footer-padding-y / 2;
+    @include media-breakpoint-down('xs') {
+      text-align: center;
     }
   }
 
   &__nav {
-    @extend .ml-auto;
-    @extend .mr-auto;
-    @extend .text-center;
-    @include media-breakpoint-down('sm') {
-      display: block;
-      margin-bottom: 1.875rem;
+    padding-bottom: $app-footer-padding-y / 2;
+  }
+
+  .nav-link {
+    color: $navbar-dark-color;
+    line-height: 1;
+    padding: map-get($spacers, 2) 0;
+
+    &:hover, &:focus {
+      color: $navbar-dark-hover-color;
+    }
+
+    &:active {
+      color: $navbar-dark-active-color;
     }
   }
 
+  &__nav-text {
+    padding: map-get($spacers, 2) 0;
+    line-height: 1;
+    color: $navbar-dark-color;
+    display: inline-block;
+  }
+
   &__social {
+    padding: $app-footer-padding-y 0;
     @extend .justify-content-center;
     @extend .align-items-center;
 
     li {
       &:not(:first-child) {
         margin-left: .5rem;
+        @include media-breakpoint-up('md') {
+          margin-left: 1rem;
+        }
       }
       &:not(:last-child) {
         margin-right: .5rem;
+        @include media-breakpoint-up('md') {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  .app-footer__social-link {
+    font-size: $app-footer-social-font-size;
+    color: $app-footer-color;
+  }
+
+  &__logo {
+    margin-right: 0 !important;
+  }
+
+  &__copyright {
+    padding-top: $app-footer-padding-y;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $headings-font-family;
+    color: $app-footer-color;
+  }
+
+  &__copyright-item {
+    @include media-breakpoint-up('md') {
+      display: inline-block;
+      padding-right: 1rem;
+      line-height: 1;
+      &:not(:last-child) {
+        border-right: 1px solid $app-footer-color;
+        margin-right: 1rem;
       }
     }
   }
