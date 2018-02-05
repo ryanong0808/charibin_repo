@@ -37,7 +37,7 @@ class Support extends PureComponent {
               </p>
             </Col>
             <Col xs={12} md={5}>
-              <div mbResponsive className="pl-md-4">
+              <div className="pl-md-4">
                 <IconListItem icon={IconPhone}>
                   (212) 243-3900 (9am-6pm EST)
                 </IconListItem>

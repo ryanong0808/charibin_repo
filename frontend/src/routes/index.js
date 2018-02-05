@@ -20,6 +20,7 @@ import Careers from 'pages/Careers'
 import Donors from 'pages/Donors'
 import DonorDetail from 'pages/DonorDetail'
 import Faqs from 'pages/Faqs'
+import HowItWorks from 'pages/HowItWorks'
 import InfluencerProgram from 'pages/InfluencerProgram'
 import JobDetail from 'pages/JobDetail'
 import Mission from 'pages/Mission'
@@ -150,6 +151,7 @@ const FrontendRoutes = props => (
     <Route exact path="/authenticity" component={Authenticity} />
     <Route exact path="/careers" component={Careers} />
     <Route exact path="/faqs" component={Faqs} />
+    <Route exact path="/how-it-works" component={HowItWorks} />
     <Route exact path="/influencer-program" component={InfluencerProgram} />
     <Route exact path="/jobs/:id" component={JobDetail} />
     <Route exact path="/mission" component={Mission} />
