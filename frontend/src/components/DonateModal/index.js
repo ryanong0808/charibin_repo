@@ -51,6 +51,7 @@ class DonateModal extends PureComponent {
           <SubscribeForm
             {...donateForm}
             forModal
+            buttonLabel="Send"
             handleSubmit={handleSubmit(this.doSubmit)}
           />
         </ModalBody>

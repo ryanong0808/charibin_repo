@@ -6,16 +6,28 @@ import { NavbarBrand } from 'reactstrap'
 
 class AppLogo extends PureComponent {
   static propTypes = {
-    color: PropTypes.string
+    color: PropTypes.string,
+    height: PropTypes.number,
+    width: PropTypes.number
+  }
+
+  static defaultProps = {
+    height: 48
   }
 
   render() {
-    const { color, ...props } = this.props
+    const { color, width, height, ...props } = this.props
     const logo = color ? `logo-${color}` : `logo`
 
     return (
       <NavbarBrand tag={Link} to="/" {...props}>
-        <img src={`/${logo}.svg`} height="48" className="align-top" alt="Charibin" />
+        <img
+          src={`/${logo}.svg`}
+          width={width}
+          height={height}
+          className="align-top"
+          alt="Charibin"
+        />
       </NavbarBrand>
     )
   }

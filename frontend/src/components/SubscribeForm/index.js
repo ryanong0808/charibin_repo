@@ -28,13 +28,18 @@ const isValidEmail = value =>
 
 class SubscribeForm extends PureComponent {
   static propTypes = {
+    buttonLabel: PropTypes.string,
     forModal: PropTypes.bool,
     handleSubmit: PropTypes.func.isRequired,
     submitting: PropTypes.bool
   }
 
+  static defaultProps = {
+    buttonLabel: 'Subscribe'
+  }
+
   render() {
-    const { forModal, handleSubmit, submitting } = this.props
+    const { buttonLabel, forModal, handleSubmit, submitting } = this.props
 
     return (
       <form onSubmit={handleSubmit}>
@@ -52,7 +57,7 @@ class SubscribeForm extends PureComponent {
           </Col>
           <Col xs={12} md={forModal ? undefined : 4}>
             <Button type="submit" block size="lg" color="primary" disabled={submitting}>
-              {forModal ? 'Send' : 'Subscribe'}
+              {buttonLabel}
             </Button>
           </Col>
         </Row>

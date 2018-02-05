@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Fragment,PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
@@ -8,6 +8,7 @@ import {
 
 import AppHeaderMenu from 'components/AppHeaderMenu'
 import AppLogo from 'components/AppLogo'
+import CategoriesMenu from 'components/CategoriesMenu'
 import IconUser from 'icons/IconUser'
 
 
@@ -59,24 +60,30 @@ class AppHeader extends PureComponent {
     const { menuOpened } = this.state
 
     return (
-      <Navbar color="faded" light expand="md" className={COMPONENT_CLASS}>
-        <AppLogo />
-        <div className={bem('account-responsive')} style={{ flexGrow: 1 }}>
-          <AccountDropdown
-            isStaff={isStaff}
-            onSignOut={this.handleSignOut}
-          />
+      <Fragment>
+        <Navbar color="faded" light expand="lg" className={COMPONENT_CLASS}>
+          <AppLogo />
+          <div className={bem('account-responsive')} style={{ flexGrow: 1 }}>
+            <AccountDropdown
+              isStaff={isStaff}
+              onSignOut={this.handleSignOut}
+            />
+          </div>
+          <NavbarToggler onClick={this.handleToggleMenu} />
+          <Collapse isOpen={menuOpened} navbar>
+            <AppHeaderMenu />
+            <AccountDropdown
+              className="d-none d-md-block"
+              isStaff={isStaff}
+              onSignOut={this.handleSignOut}
+            />
+            <CategoriesMenu className="d-lg-none" />
+          </Collapse>
+        </Navbar>
+        <div className="d-none d-lg-block">
+          <CategoriesMenu />
         </div>
-        <NavbarToggler onClick={this.handleToggleMenu} />
-        <Collapse isOpen={menuOpened} navbar>
-          <AppHeaderMenu />
-          <AccountDropdown
-            className="d-none d-md-block"
-            isStaff={isStaff}
-            onSignOut={this.handleSignOut}
-          />
-        </Collapse>
-      </Navbar>
+      </Fragment>
     )
   }
 }

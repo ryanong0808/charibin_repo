@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from api.filters.category import AuctionCategoryFilterBackend
 from api.filters.donor import AuctionDonorFilterBackend
 from api.filters.order_by import AuctionOrderByBackend
+from api.filters.new_arrivals import AuctionNewArrivalsFilterBackend
 from api.filters.price_range import AuctionPriceRangeFilterBackend
 from api.filters.q import AuctionQueryFilterBackend
 from api.filters.status import BidStatusFilterBackend
@@ -40,6 +41,7 @@ class AuctionListView(generics.ListAPIView):
     filter_backends = (
         AuctionCategoryFilterBackend,
         AuctionDonorFilterBackend,
+        AuctionNewArrivalsFilterBackend,
         AuctionOrderByBackend,
         AuctionPriceRangeFilterBackend,
         AuctionQueryFilterBackend,

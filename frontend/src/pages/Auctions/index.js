@@ -67,6 +67,9 @@ class Auctions extends PureComponent {
   getAuctionListPage = (loadMore) => {
     const { getAuctionList, location } = this.props
     const searchParams = queryStringToJson(location.search)
+    if (location.pathname.includes('new-arrivals')) {
+      searchParams['new-arrivals'] = true
+    }
     getAuctionList({
       loadMore,
       params: searchParams
@@ -78,10 +81,10 @@ class Auctions extends PureComponent {
   }
 
   handleSearch = (values) => {
-    const { history } = this.props
+    const { history, location } = this.props
 
     history.push({
-      pathname: '/auctions',
+      pathname: location.pathname,
       search: getQueryString(values.toJS())
     })
   }
@@ -96,6 +99,7 @@ class Auctions extends PureComponent {
     const isLoading = auctionListStatus === API_PENDING
     const noItems = auctionListStatus === API_SUCCESS && !hasItems
     const searchParams = getSearchParams(location.search)
+    const hasFilters = location.search || location.pathname.includes('new-arrivals')
 
     return (
       <FrontContainerLayout subscribe>
@@ -113,7 +117,7 @@ class Auctions extends PureComponent {
           )}
           {noItems && (
             <EmptyItems
-              description={location.search
+              description={hasFilters
                 ? "Sorry, No auctions found that matches your search criteria."
                 : "Sorry, No auctions added yet"
               }

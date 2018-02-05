@@ -1,0 +1,24 @@
+.donate-subscribe-bar {
+  @extend .bg-secondary;
+  @extend .py-4;
+
+  &__item-first {
+    @include media-breakpoint-down('md') {
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      padding-bottom: map-get($spacers, 3);
+      margin-bottom: map-get($spacers, 3);
+    }
+
+    @include media-breakpoint-up('lg') {
+      border-right: 1px solid rgba(255, 255, 255, .1);
+    }
+  }
+
+  &__text {
+    color: $white;
+
+    @include media-breakpoint-up('lg') {
+      font-size: $h2-font-size;
+    }
+  }
+}

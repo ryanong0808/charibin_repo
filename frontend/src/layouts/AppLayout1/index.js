@@ -9,7 +9,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes'
 import AppHeader from 'components/AppHeader'
 import AppHeaderGuest from 'components/AppHeaderGuest'
 import AppFooter from 'components/AppFooter'
-import SubscribeBar from 'components/SubscribeBar'
+import DonateSubscribeBar from 'components/DonateSubscribeBar'
 import { getCurrentUser } from 'store/modules/auth'
 import { signOut } from 'store/modules/auth'
 import { authSelector } from 'store/selectors'
@@ -82,7 +82,7 @@ class AppLayout1 extends PureComponent {
             {children}
           </div>
         </div>
-        {subscribe && <SubscribeBar />}
+        {subscribe && <DonateSubscribeBar />}
         <AppFooter />
       </div>
     )

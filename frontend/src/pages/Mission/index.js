@@ -6,7 +6,7 @@ import AppLayout1 from 'layouts/AppLayout1'
 import IconListItem from 'components/IconListItem'
 import Section from 'components/Section'
 // import SectionTitle from 'components/SectionTitle'
-import SubscribeBar from 'components/SubscribeBar'
+import DonateSubscribeBar from 'components/DonateSubscribeBar'
 
 import missionImg from 'images/mission.jpg'
 import iconMisson1 from 'images/icon-mission1.svg'
@@ -68,7 +68,7 @@ class Mission extends PureComponent {
             </Col>
           </Row>
         </AppContainerLayout>
-        <SubscribeBar />
+        <DonateSubscribeBar />
         {/* <AppContainerLayout>
           <Section>
             <SectionTitle className="text-center">Mentioned In</SectionTitle>
