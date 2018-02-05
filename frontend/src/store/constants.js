@@ -96,6 +96,7 @@ export const BLOG_CREATE_POST_COMMENT = 'charibin/blog/create-post-comment'
 export const JOB_GET_LIST = 'charibin/jobs/get-list'
 export const JOB_GET_DETAIL = 'charibin/jobs/get-detail'
 
+export const SETTINGS_GET_CATEGORIES_MENU_ITEMS = 'charibin/settings/categories-menu-items-get'
 export const SETTINGS_GET_COUNTRIES = 'charibin/settings/countries'
 
 export const ACCOUNT_SET_PAYMENT = 'charibin/account/set-payment'

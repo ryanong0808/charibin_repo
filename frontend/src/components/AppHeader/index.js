@@ -5,11 +5,15 @@ import {
   Collapse, Navbar, NavbarToggler,
   UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,
 } from 'reactstrap'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import AppHeaderMenu from 'components/AppHeaderMenu'
 import AppLogo from 'components/AppLogo'
 import CategoriesMenu from 'components/CategoriesMenu'
 import IconUser from 'icons/IconUser'
+import { categoriesMenuSelector } from 'store/selectors'
+import { getCategoriesMenuItems } from 'store/modules/settings'
 
 
 const COMPONENT_CLASS = 'app-header'
@@ -31,6 +35,8 @@ const AccountDropdown = ({ className, isStaff, onSignOut }) => (
 class AppHeader extends PureComponent {
 
   static propTypes = {
+    getCategoriesMenuItems: PropTypes.func.isRequired,
+    categories: PropTypes.array,
     username: PropTypes.string.isRequired,
     onSignOut: PropTypes.func,
     isStaff: PropTypes.bool,
@@ -38,6 +44,10 @@ class AppHeader extends PureComponent {
 
   state = {
     menuOpened: false,
+  }
+
+  componentWillMount() {
+    this.props.getCategoriesMenuItems();
   }
 
   handleToggleMenu = () => {
@@ -56,7 +66,7 @@ class AppHeader extends PureComponent {
   }
 
   render() {
-    const { isStaff } = this.props
+    const { categories, isStaff } = this.props
     const { menuOpened } = this.state
 
     return (
@@ -77,15 +87,23 @@ class AppHeader extends PureComponent {
               isStaff={isStaff}
               onSignOut={this.handleSignOut}
             />
-            <CategoriesMenu className="d-lg-none" />
+            <CategoriesMenu className="d-lg-none" categories={categories} />
           </Collapse>
         </Navbar>
         <div className="d-none d-lg-block">
-          <CategoriesMenu />
+          <CategoriesMenu categories={categories} />
         </div>
       </Fragment>
     )
   }
 }
 
-export default AppHeader
+const selector = createStructuredSelector({
+  categories: categoriesMenuSelector
+})
+
+const actions = {
+  getCategoriesMenuItems
+}
+
+export default connect(selector, actions)(AppHeader)
