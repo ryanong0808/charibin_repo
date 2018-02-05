@@ -58,6 +58,8 @@ import AdminPostList from 'pages/AdminPostList'
 import AdminPostCreate from 'pages/AdminPostCreate'
 import AdminPostDetail from 'pages/AdminPostDetail'
 import AdminBacklog from 'pages/AdminBacklog'
+import AdminSettingsList from 'pages/AdminSettingsList'
+import AdminSettingsCategoriesMenuItems from 'pages/AdminSettingsCategoriesMenuItems'
 
 // Managers (currently implemented as invisible page components)
 import RealTimeNotificationManager from 'managers/RealTimeNotificationManager'
@@ -116,6 +118,8 @@ const AdminRoutes = props => (
     <Route exact path="/admin/users/:id(\d+)/history" component={AdminUserHistory} />
     <Route exact path="/admin/media" component={AdminMediumList} />
     <Route exact path="/admin/backlog" component={AdminBacklog} />
+    <Route exact path="/admin/settings" component={AdminSettingsList} />
+    <Route exact path="/admin/settings/categories-menu-items" component={AdminSettingsCategoriesMenuItems} />
   </AdminLayout>
 )
 

@@ -36,6 +36,8 @@ from api.views.admin.tags import TagSuggestionListView
 from api.views.admin.users import UserBlockUnblockView
 from api.views.admin.users import UserListView
 from api.views.admin.users import UserHistoryView
+from api.views.admin.site_settings import SiteSettingsDetailView
+from api.views.admin.site_settings import SiteSettingsListView
 
 
 urlpatterns = [
@@ -99,4 +101,8 @@ urlpatterns = [
     # notification endpoints
     url(r'^notifications/menu/$', NotificationListForMenuView.as_view(), name='notification-list-for-menu'),
     url(r'^notifications/$', NotificationListView.as_view(), name='notification-list'),
+
+    # site settings endpoints
+    url(r'^settings/(?P<type>[\w|\W]+)/$', SiteSettingsDetailView.as_view(), name='settings-detail'),
+    url(r'^settings/$', SiteSettingsListView.as_view(), name='settings-list'),
 ]

@@ -28,6 +28,9 @@ export const adminSalesSelector = state =>
 export const adminBlogSelector = state =>
   state.get('adminBlog')
 
+export const adminSettingsSelector = state =>
+  state.get('adminSettings')
+
 export const adminNotificationsSelector = state =>
   state.get('adminNotifications')
 
@@ -48,6 +51,9 @@ export const donorsSelector = state =>
 
 export const jobsSelector = state =>
   state.get('jobs')
+
+export const categoriesMenuSelector = state =>
+  state.get('settings').get('categoriesMenuItems').toJS()
 
 export const countriesSelector = state =>
   state.get('settings').get('countries').toJS()

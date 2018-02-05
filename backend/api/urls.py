@@ -22,6 +22,7 @@ from api.views.blog import PostFrontListView
 from api.views.blog import PostListView
 from api.views.blog import PostDetailView
 from api.views.blog import PostCommentListView
+from api.views.settings import CategoriesMenuItemsView
 from api.views.settings import CountriesView
 from api.views.payment import AccountPaymentView
 from api.views.payment import PaymentTestView
@@ -61,6 +62,7 @@ urlpatterns = [
 
     url(r'^payment-test/$', PaymentTestView.as_view(), name='payment-test'),
 
+    url(r'^settings/categories-menu-items/$', CategoriesMenuItemsView.as_view(), name='settings-categories-menu-items'),
     url(r'^settings/countries$', CountriesView.as_view(), name='settings-countries'),
 
     url(r'^admin/', include('api.views.admin.urls', namespace='admin')),

@@ -71,6 +71,10 @@ export const ADMIN_RESET_NOTIFICATION_UNREAD_COUNT = 'charibin/admin/reset-notif
 export const ADMIN_GET_NOTIFICATION_LIST_ON_MENU = 'charibin/admin/get-notification-list-on-menu'
 export const ADMIN_GET_NOTIFICATION_PAGE = 'charibin/admin/get-notification-page'
 
+export const ADMIN_SETTINGS_GET_CATEGORIES_MENU_ITEMS = 'charibin/admin/settings-categories-menu-items-get'
+export const ADMIN_SETTINGS_UPDATE_CATEGORIES_MENU_ITEMS = 'charibin/admin/settings-categories-menu-items-update'
+export const ADMIN_SETTINGS_LIST = 'charibin/admin/settings-list'
+
 export const ACCOUNT_GET_MY_BIDS = 'charibin/account/get-my-bids'
 export const ACCOUNT_DELETE_MY_BID = 'charibin/account/delete-my-bid'
 
@@ -92,6 +96,7 @@ export const BLOG_CREATE_POST_COMMENT = 'charibin/blog/create-post-comment'
 export const JOB_GET_LIST = 'charibin/jobs/get-list'
 export const JOB_GET_DETAIL = 'charibin/jobs/get-detail'
 
+export const SETTINGS_GET_CATEGORIES_MENU_ITEMS = 'charibin/settings/categories-menu-items-get'
 export const SETTINGS_GET_COUNTRIES = 'charibin/settings/countries'
 
 export const ACCOUNT_SET_PAYMENT = 'charibin/account/set-payment'

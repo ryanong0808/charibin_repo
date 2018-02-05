@@ -43,3 +43,6 @@ export const truncateWords = (str, words = 10) => {
   const trail = splitted.length > words ? ' ...' : ''
   return splitted.splice(0, words).join(' ') + trail
 }
+
+export const capitalizeWords = (str) =>
+  str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
