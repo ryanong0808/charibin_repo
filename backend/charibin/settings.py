@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'job',
     'notification',
     'history',
+    'site_settings'
 )
 
 MIDDLEWARE_CLASSES = (
