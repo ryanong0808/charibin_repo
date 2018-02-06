@@ -72,7 +72,7 @@ class Product(ModelTagnamesMixin, models.Model):
         return 'Product <{}>'.format(self.title)
 
     def get_similar_products(self, count, **kwargs):
-        qs = Product.objects.select_related('auction').prefetch_related('media')
+        qs = Product.objects.prefetch_related('auction').prefetch_related('media')
         if bool(kwargs):
             qs = qs.filter(**kwargs)
         return TaggedItem.objects.get_related(self, qs, count)
