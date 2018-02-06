@@ -39,7 +39,7 @@ class Support extends PureComponent {
             <Col xs={12} md={5}>
               <div className="pl-md-4">
                 <IconListItem icon={IconPhone}>
-                  (212) 243-3900 (9am-6pm EST)
+                  (347) 389-3581 (9am-6pm EST)
                 </IconListItem>
                 <IconListItem icon={IconMail}>
                   <a href="mailto:info@charibin.com">info@charibin.com</a>

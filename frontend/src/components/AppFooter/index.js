@@ -100,7 +100,7 @@ class AppFooter extends PureComponent {
                     <NavText>By Phone or Email</NavText>
                   </NavItem>
                   <NavItem>
-                    <NavText>Toll Free: (855) 435-5893</NavText>
+                    <NavText>Toll Free: (347) 389-3581</NavText>
                   </NavItem>
                   <NavItem>
                     <NavText>MON - FRI 9am - 6pm EST</NavText>
