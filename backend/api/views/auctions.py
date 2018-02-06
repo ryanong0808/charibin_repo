@@ -26,7 +26,7 @@ from auction.models import Bid
 
 class AuctionFrontListView(generics.ListAPIView):
     serializer_class = AuctionSerializer
-    pagination_class = FourPerPagePagination
+    pagination_class = EightPerPagePagination
     filter_backends = (AuctionCategoryFilterBackend, )
     queryset = Auction.objects.order_by('-started_at') \
         .select_related('product') \
