@@ -14,6 +14,7 @@ class CountriesView(APIView):
         return Response(res)
 
 class CategoriesMenuItemsView(APIView):
+    permission_classes=[]
     def get(self, *args, **kwargs):
         setting, created = SiteSettings.objects.get_or_create(type=CATEGORIES_MENU_ITEMS)
         return Response(setting.value)
