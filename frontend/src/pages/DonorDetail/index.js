@@ -37,7 +37,7 @@ class DonorDetail extends PureComponent {
 
     return [
       { route: '/', text: 'Home' },
-      { route: '/donors', text: 'Donors' },
+      { route: '/donors', text: 'Do-Gooders' },
       { text: donorDetail ? donorDetail.get('title') : '' },
     ]
   }
@@ -89,7 +89,7 @@ class DonorDetail extends PureComponent {
         {donorDetailStatus === API_PENDING && <Spinner />}
 
         {donorDetailStatus === API_FAIL &&
-          <SectionTitle className="text-center">Donor not found</SectionTitle>
+          <SectionTitle className="text-center">Do-Gooder not found</SectionTitle>
         }
 
         {donorDetailStatus === API_SUCCESS && <div>
@@ -142,8 +142,8 @@ class DonorDetail extends PureComponent {
               </ListWrapper>
             ) : (
               <EmptyItems
-                description="Sorry, there’s no similar donor for this Do-Gooder."
-                actionText="Get updates for this donor."
+                description="Sorry, there’s no similar do-gooder like this do-gooder."
+                actionText="Get updates for this do-gooder."
               />
             )}
           </Section>

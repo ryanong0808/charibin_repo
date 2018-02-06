@@ -29,7 +29,7 @@ const TermsConditions = () => (
       Once you register as a User on the Site, the Site offers several ways for a Charibin User to
       acquire properties or experiences. The first way is by bidding through an online auction on
       the Site for Property and/or an Experience (the "Auction") that is offered by a charitable
-      organization or third party donor (collectively, the "Seller") through Charibin. The second
+      organization or third party do-gooder (collectively, the "Seller") through Charibin. The second
       way is by submitting a request to Charibin under the Charibin Custom Experiences Program for
       a specific Property and/or an Experience. An "Experience" may include, but is not limited to,
       a celebrity meet and greet, dinner with a celebrity or other such experience. "Property" is
