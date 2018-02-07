@@ -62,7 +62,7 @@ class AdminAuctionList extends PureComponent {
       { field: 'min_bid', label: 'Min bid', enabled: true },
       { field: 'highest_bidder', label: 'Highest bidder', enabled: true },
       { field: 'started_at', label: 'Time started', enabled: true },
-      { field: 'time_remaining', label: 'Time remaining', enabled: true },
+      { field: 'open_until', label: 'Time remaining', enabled: true },
       { field: 'number_of_bids', label: 'Number of bids', enabled: true },
     ])
   }

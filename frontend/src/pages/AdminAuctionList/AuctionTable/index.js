@@ -8,6 +8,7 @@ import {
 } from 'reactstrap'
 
 import Spinner from 'components/Spinner'
+import TimeLeft from 'components/TimeLeft'
 import {
   AUCTION_STATUS_TEXTS,
   AUCTION_STATUS_PREVIEW,
@@ -36,12 +37,9 @@ class AuctionTable extends PureComponent {
       return auction.get('pk')
     } else if (field === 'item_donor') {
       return auction.getIn(['product_details', 'donor_details', 'title'], '-')
-    } else if (field === 'time_remaining') {
-      const secondsRemaining = parseInt(auction.get(field), 10)
-      const hours = parseInt(secondsRemaining / 3600, 10)
-      const minutes = parseInt((secondsRemaining % 3600) / 60, 10)
-      const seconds = secondsRemaining % 60
-      return `${hours}h ${minutes}min ${seconds}sec`
+    } else if (field === 'open_until') {
+      console.log(auction.get(field))
+      return <TimeLeft until={auction.get(field)} />
     } else if (field === 'status') {
       return AUCTION_STATUS_TEXTS[auction.get('status')]
     } else if (field === 'started_at') {

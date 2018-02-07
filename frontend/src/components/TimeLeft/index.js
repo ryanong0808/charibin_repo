@@ -6,7 +6,7 @@ import moment from 'moment'
 const difference = (until, includeSeconds) => {
   const duration = moment.duration(moment(until).diff(moment()))
   const arr = [
-    `${duration.days()}d`,
+    `${parseInt(duration.asDays(), 10)}d`,
     `${duration.hours()}h`,
     `${duration.minutes()}m`,
     includeSeconds ? `${duration.seconds()}s` : ''
