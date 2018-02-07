@@ -16,7 +16,7 @@ const getDonorListPage = function* (action) {
   yield call(apiCall({
     type: DONOR_GET_LIST_PAGE,
     method: 'get',
-    path: 'donors/',
+    path: 'do-gooders/',
     params: { page },
     payloadOnSuccess: (data, action) => ({
       ...data,
@@ -29,13 +29,13 @@ const getDonorListPage = function* (action) {
 const getDonorFrontList = apiCall({
   type: DONOR_GET_FRONT_LIST,
   method: 'get',
-  path: 'donors/front/',
+  path: 'do-gooders/front/',
 })
 
 const getDonorDetail = apiCall({
   type: DONOR_GET_DETAIL,
   method: 'get',
-  path: ({ payload }) => `/donors/${payload.id}/`,
+  path: ({ payload }) => `/do-gooders/${payload.id}/`,
 })
 
 export default function* rootSaga () {

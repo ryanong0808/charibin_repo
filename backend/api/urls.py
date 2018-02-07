@@ -40,9 +40,9 @@ urlpatterns = [
     url(r'^current-user/update-password/$', UpdatePasswordView.as_view(), name='current-user-update-password'),
     url(r'^test/$', TestView.as_view()),
 
-    url(r'^donors/front/$', DonorFrontListView.as_view(), name='donor-front-list'),
-    url(r'^donors/$', DonorListView.as_view(), name='donor-list'),
-    url(r'^donors/(?P<pk>[0-9]+)/$', DonorDetailView.as_view(), name='donor-detail'),
+    url(r'^do-gooders/front/$', DonorFrontListView.as_view(), name='donor-front-list'),
+    url(r'^do-gooders/$', DonorListView.as_view(), name='donor-list'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/$', DonorDetailView.as_view(), name='donor-detail'),
 
     url(r'^jobs/$', JobListView.as_view(), name='job-list'),
     url(r'^jobs/(?P<pk>[0-9]+)/$', JobDetailView.as_view(), name='job-detail'),

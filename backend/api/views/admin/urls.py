@@ -47,13 +47,13 @@ urlpatterns = [
     url(r'^charities/(?P<pk>[0-9]+)/logo/$', CharityLogoUploadView.as_view(), name='charity-logo'),
 
     # donors endpoints
-    url(r'^donors/$', DonorListView.as_view(), name='donor-list'),
-    url(r'^donors/(?P<pk>[0-9]+)/$', DonorDetailView.as_view(), name='donor-detail'),
-    url(r'^donors/(?P<pk>[0-9]+)/products/$', DonorProductListView.as_view(), name='donor-product-list'),
-    url(r'^donors/(?P<pk>[0-9]+)/media/$', DonorMediumUploadView.as_view(), name='donor-medium'),
-    url(r'^donors/(?P<pk>[0-9]+)/media/(?P<dm_pk>[0-9]+)/$',
+    url(r'^do-gooders/$', DonorListView.as_view(), name='donor-list'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/$', DonorDetailView.as_view(), name='donor-detail'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/products/$', DonorProductListView.as_view(), name='donor-product-list'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/media/$', DonorMediumUploadView.as_view(), name='donor-medium'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/media/(?P<dm_pk>[0-9]+)/$',
         DonorMediumDeleteView.as_view(), name='donor-medium-delete'),
-    url(r'^donors/(?P<pk>[0-9]+)/media/reorder/$', DonorMediaReorderView.as_view(), name='donor-media-reorder'),
+    url(r'^do-gooders/(?P<pk>[0-9]+)/media/reorder/$', DonorMediaReorderView.as_view(), name='donor-media-reorder'),
 
     # products endpoints
     url(r'^products/$', ProductListView.as_view(), name='product-list'),

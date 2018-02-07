@@ -17,55 +17,55 @@ import {
 const getDonorList = apiCall({
   type: ADMIN_GET_DONOR_LIST,
   method: 'get',
-  path: 'admin/donors/',
+  path: 'admin/do-gooders/',
 })
 
 const createDonor = apiCall({
   type: ADMIN_CREATE_DONOR,
   method: 'post',
-  path: 'admin/donors/',
+  path: 'admin/do-gooders/',
 })
 
 const getDonorDetail = apiCall({
   type: ADMIN_GET_DONOR_DETAIL,
   method: 'get',
-  path: ({ payload }) => `admin/donors/${payload.id}/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/`,
 })
 
 const updateDonorDetail = apiCall({
   type: ADMIN_UPDATE_DONOR_DETAIL,
   method: 'put',
-  path: ({ payload }) => `admin/donors/${payload.id}/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/`,
 })
 
 const deleteDonor = apiCall({
   type: ADMIN_DELETE_DONOR,
   method: 'delete',
-  path: ({ payload }) => `admin/donors/${payload.id}/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/`,
 })
 
 const getDonorProductList = apiCall({
   type: ADMIN_GET_DONOR_PRODUCT_LIST,
   method: 'get',
-  path: ({ payload }) => `admin/donors/${payload.id}/products`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/products`,
 })
 
 const uploadDonorMedium = apiCall({
   type: ADMIN_UPLOAD_DONOR_MEDIUM,
   method: 'post',
-  path: ({ payload }) => `admin/donors/${payload.id}/media/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/media/`,
 })
 
 const deleteDonorMedium = apiCall({
   type: ADMIN_DELETE_DONOR_MEDIUM,
   method: 'delete',
-  path: ({ payload }) => `admin/donors/${payload.id}/media/${payload.dmId}/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/media/${payload.dmId}/`,
 })
 
 const reorderDonorMedia = apiCall({
   type: ADMIN_REORDER_DONOR_MEDIUM,
   method: 'post',
-  path: ({ payload }) => `admin/donors/${payload.id}/media/reorder/`,
+  path: ({ payload }) => `admin/do-gooders/${payload.id}/media/reorder/`,
 })
 
 export default function* rootSaga () {
