@@ -8,7 +8,7 @@ const AppHeaderMenu = () => (
       <NavLink tag={Link} to="/auctions">Auctions</NavLink>
     </NavItem>
     <NavItem>
-      <NavLink tag={Link} to="/donors">Do-Gooders</NavLink>
+      <NavLink tag={Link} to="/do-gooders">Do-Gooders</NavLink>
     </NavItem>
     <NavItem>
       <NavLink tag={Link} to="/how-it-works">How It Works</NavLink>

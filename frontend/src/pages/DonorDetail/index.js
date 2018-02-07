@@ -37,7 +37,7 @@ class DonorDetail extends PureComponent {
 
     return [
       { route: '/', text: 'Home' },
-      { route: '/donors', text: 'Do-Gooders' },
+      { route: '/do-gooders', text: 'Do-Gooders' },
       { text: donorDetail ? donorDetail.get('title') : '' },
     ]
   }
@@ -131,7 +131,7 @@ class DonorDetail extends PureComponent {
 
           <Section
             title="Other Do-Gooders"
-            link="/donors"
+            link="/do-gooders"
             linkText="All Do-Gooders"
           >
             {simiarDonors && simiarDonors.size ? (

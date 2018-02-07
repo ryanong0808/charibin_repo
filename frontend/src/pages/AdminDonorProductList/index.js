@@ -100,7 +100,7 @@ class AdminDonorProductList extends PureComponent {
     if (loadingDonorStatus === -1) {
       return (
         <div>
-          <SectionTitle>Donor not found</SectionTitle>
+          <SectionTitle>Do-gooder not found</SectionTitle>
         </div>
       )
     }

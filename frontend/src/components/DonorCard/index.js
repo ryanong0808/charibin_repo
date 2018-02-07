@@ -18,7 +18,7 @@ class DonorCard extends PureComponent {
 
   render() {
     const { donor } = this.props
-    const linkTo = `/donors/${donor.get('pk')}`
+    const linkTo = `/do-gooders/${donor.get('pk')}`
 
     return (
       <Col lg={6} xs={12} className="gb">

@@ -97,10 +97,10 @@ const AdminRoutes = props => (
     <Route exact path="/admin/charities" component={AdminCharityList} />
     <Route exact path="/admin/charities/create" component={AdminCharityCreate} />
     <Route exact path="/admin/charities/:id(\d+)" component={AdminCharityDetail} />
-    <Route exact path="/admin/donors" component={AdminDonorList} />
-    <Route exact path="/admin/donors/create" component={AdminDonorCreate} />
-    <Route exact path="/admin/donors/:id(\d+)" component={AdminDonorDetail} />
-    <Route exact path="/admin/donors/:id(\d+)/products" component={AdminDonorProductList} />
+    <Route exact path="/admin/do-gooders" component={AdminDonorList} />
+    <Route exact path="/admin/do-gooders/create" component={AdminDonorCreate} />
+    <Route exact path="/admin/do-gooders/:id(\d+)" component={AdminDonorDetail} />
+    <Route exact path="/admin/do-gooders/:id(\d+)/products" component={AdminDonorProductList} />
     <Route exact path="/admin/products" component={AdminProductList} />
     <Route exact path="/admin/products/create" component={AdminProductCreate} />
     <Route exact path="/admin/products/:id(\d+)" component={AdminProductDetail} />
@@ -146,8 +146,8 @@ const FrontendRoutes = props => (
     <Route exact path="/auctions/new-arrivals" component={Auctions} />
     <Route exact path="/auctions/:id" component={AuctionDetail} />
 
-    <Route exact path="/donors" component={Donors} />
-    <Route exact path="/donors/:id" component={DonorDetail} />
+    <Route exact path="/do-gooders" component={Donors} />
+    <Route exact path="/do-gooders/:id" component={DonorDetail} />
 
     <Route exact path="/blog" component={Posts} />
     <Route exact path="/blog/posts/:id" component={PostDetail} />

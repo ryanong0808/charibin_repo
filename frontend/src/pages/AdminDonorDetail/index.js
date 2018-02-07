@@ -58,7 +58,7 @@ class AdminDonorDetail extends PureComponent {
   }
 
   handleBack = () => this.props.history.push({
-    pathname: '/admin/donors'
+    pathname: '/admin/do-gooders'
   })
 
   handleDeleteDonorMedium = (dmId, event) => {
@@ -162,7 +162,7 @@ class AdminDonorDetail extends PureComponent {
     if (loadingStatus === -1) {
       return (
         <div>
-          <SectionTitle>Donor not found</SectionTitle>
+          <SectionTitle>Do-gooder not found</SectionTitle>
         </div>
       )
     }
@@ -184,12 +184,12 @@ class AdminDonorDetail extends PureComponent {
       <div>
         <div>
           <div className="clearfix">
-            <SectionTitle className="mb-5 pull-left">Edit Donor</SectionTitle>
+            <SectionTitle className="mb-5 pull-left">Edit Do-Gooder</SectionTitle>
             {
               donorDetail ?
               <Link
                 className="btn btn-primary pull-right"
-                to={`/admin/donors/${donorDetail.get('pk')}/products`}
+                to={`/admin/do-gooders/${donorDetail.get('pk')}/products`}
               >
                 Products from this donor
               </Link>

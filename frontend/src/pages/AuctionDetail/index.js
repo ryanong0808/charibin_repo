@@ -126,7 +126,7 @@ class AuctionDetail extends PureComponent {
         <Section
           title={
             <span>
-              More from <Link to={`/donors/${donor.get('pk')}`}>{donor.get('title')}</Link>
+              More from <Link to={`/do-gooders/${donor.get('pk')}`}>{donor.get('title')}</Link>
             </span>
           }
         >

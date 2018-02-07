@@ -113,7 +113,7 @@ class Home extends PureComponent {
     return (
       <Section
         title="Do-Gooders"
-        link="/donors"
+        link="/do-gooders"
         linkText="All Do-Gooders"
       >
         {hasItems && (

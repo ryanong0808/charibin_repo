@@ -37,14 +37,14 @@ class AdminDonorCreate extends PureComponent {
       data: formData,
       success: ({ data }) => {
         history.push({
-          pathname: `/admin/donors/${data.pk}`
+          pathname: `/admin/do-gooders/${data.pk}`
         })
       }
     })
   }
 
   handleBack = () => this.props.history.push({
-    pathname: '/admin/donors'
+    pathname: '/admin/do-gooders'
   })
 
   componentWillMount() {
@@ -68,7 +68,7 @@ class AdminDonorCreate extends PureComponent {
     return (
       <div>
         <div>
-          <SectionTitle className="mb-5">Create Donor</SectionTitle>
+          <SectionTitle className="mb-5">Create Do-Gooder</SectionTitle>
 
           {!charityListLoaded && <Spinner />}
 

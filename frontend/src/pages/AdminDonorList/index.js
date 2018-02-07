@@ -92,8 +92,8 @@ class AdminDonorList extends PureComponent {
     return (
       <div>
         <div className="mb-3 clearfix">
-          <SectionTitle className="pull-left">Donors</SectionTitle>
-          <Link className="btn btn-primary pull-left ml-3" to="/admin/donors/create">
+          <SectionTitle className="pull-left">Do-Gooders</SectionTitle>
+          <Link className="btn btn-primary pull-left ml-3" to="/admin/do-gooders/create">
             + Add New
           </Link>
         </div>
@@ -119,7 +119,7 @@ class AdminDonorList extends PureComponent {
                   <th scope="row">{donor.get('pk')}</th>
                   <td>{donor.get('title')}</td>
                   <td>
-                    <Link className="text-secondary pr-3" to={`/admin/donors/${donor.get('pk')}`}>Edit</Link>
+                    <Link className="text-secondary pr-3" to={`/admin/do-gooders/${donor.get('pk')}`}>Edit</Link>
                     <a className="text-danger" href="/" onClick={this.handleDelete.bind(this, donor.get('pk'))}>Delete</a>
                   </td>
                 </tr>
