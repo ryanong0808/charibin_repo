@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { show } from 'redux-modal'
 
 class EmptyItems extends PureComponent {
-  static PropTypes = {
+  static propTypes = {
     actionText: PropTypes.string,
     description: PropTypes.string
   }
