@@ -126,7 +126,9 @@ class Auction(models.Model):
     def get_similar_auctions(self, count):
         product = self.product
         similar_products = self.product.get_similar_products(count, auction__isnull=False)
-        return [product.auction for product in similar_products]
+        return Auction.objects \
+            .filter(status=AUCTION_STATUS_OPEN) \
+            .filter(product__in=[product.pk for product in similar_products])
 
     def get_donor_auctions(self, count):
         return Auction.objects.filter(product__donor=self.product.donor).exclude(pk=self.pk)[:count]
