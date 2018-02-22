@@ -69,6 +69,14 @@ class MediumUploadMixin(MediumCreateMixin, MediumDeleteMixin):
             'audio/mp3': 'mp3',
             'image/jpeg': 'jpg',
             'image/png': 'png',
+            'image/gif': 'gif',
+            'image/bmp': 'bmp',
+            'image/webp': 'webp',
+            'image/svg+xml': 'svg',
+            'video/webm': 'webm',
+            'video/ogg': 'ogg',
+            'video/mp4': 'mp4',
+            'video/mpeg': 'mpg',
         }
         if mimetype in mimetypes_for_check:
             return mimetypes_for_check[mimetype]
